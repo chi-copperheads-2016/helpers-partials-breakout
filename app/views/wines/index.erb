@@ -1,0 +1,16 @@
+<h2>All The Wines</h2>
+
+<% if authenticated? %>
+<a href="/wines/new">New Wine</a>
+<% end %>
+
+<br>
+<% if @wines.empty? %>
+<h2>No Wines</h2>
+<% else %>
+<ul>
+  <% @wines.each do |wine| %>
+    <li><%= wine.name %> - <%= wine.description %><% if authenticated? && mine?(wine) %> - <a href="/wines/<%= wine.id %>/edit">Edit</a><% end %></li>
+  <% end %>
+</ul>
+<% end%>

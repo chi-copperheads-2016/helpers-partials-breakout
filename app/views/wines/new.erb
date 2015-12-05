@@ -1,0 +1,5 @@
+<%= erb :"_errors", locals: { model_object: @wine }%>
+
+<form action="/wines" method="POST">
+  <%= erb :"wines/_form"%>
+</form>

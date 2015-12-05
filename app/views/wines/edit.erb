@@ -1,0 +1,6 @@
+<%= erb :"_errors", locals: { model_object: @wine }%>
+
+<form action="/wines/<%= @wine.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <%= erb :"wines/_form"%>
+</form>
